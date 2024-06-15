@@ -2,9 +2,12 @@
 
 import random
 
-A=(54,"Devil","Diu",90,65,"Rajkot",101)
+def Random(num1,num2):
+    Num_R=random.choice(range(num1,num2))
+    print(f"Randome Number from Range Between {num1} and {num2} is {Num_R}")
 
-Item=random.choice(A)
 
-print(A)
-print("Select a Random Item= ",Item)
+S_N=int(input("Enter a Frist Number: "))
+L_N=int(input("Enter a Sencond Number: "))
+
+Random=(S_N,L_N)

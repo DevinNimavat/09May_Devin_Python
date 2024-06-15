@@ -1,5 +1,7 @@
 # Q20. Write a Python program to create a tuple with numbers.
 
-A=(1,5,50,55,45,45,555)
+A=(1,2,3,4,5)
 
-print(A)
+for i in A:
+    print(f"{A.index(i+1)} element: {i}")
+    i+=1
