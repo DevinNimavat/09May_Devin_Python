@@ -1,0 +1,13 @@
+# Q1. What is List? How will you reverse a list?
+
+ANSWER:
+List is a collection which is ordered and changeable. Allows duplicate members.
+
+Method 1 for reverse a list:
+
+```python
+list=["A","B","C","D","E"]
+list.reverse()
+print(list)
+# output : ['E','D','C','B','A']
+```

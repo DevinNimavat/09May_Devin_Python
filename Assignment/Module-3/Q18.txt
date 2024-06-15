@@ -1,0 +1,14 @@
+# Q18. What is tuple? Difference between list and tuple
+
+# Tuple
+# Ans
+
+A tuple in Python is an ordered and immutable  collection of items.
+
+Difference 
+
+tuple                                                   List
+
+Tuple is immutable                                      List is Mutable                
+Tuple not Allow Duplicates Value's                      List Allow Duplicates Value's    
+Tuple are using Round Brackets                          List are using square Brackets
