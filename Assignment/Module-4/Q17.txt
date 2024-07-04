@@ -1,0 +1,13 @@
+When is the finally block executed? 
+
+
+Ans->
+
+A finally block always executes, regardless of wheather an exception is thrown.
+
+ex.
+try:
+# you code that might eaise exceptions
+except Some exception:
+finally
+code to execute regardless of exceptions
