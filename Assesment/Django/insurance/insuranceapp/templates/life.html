@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Life Insurance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .custom-file-input::before {
+            content: 'Choose file';
+        }
+
+        .file-upload {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Apply for Life Insurance</h1>
+            <center>
+                <h6>{{ mag }}</h6>
+            </center>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input name="fullnm" type="text" class="form-control" id="fullName"
+                            placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" name="em" class="form-control" id="email" placeholder="Enter your email"
+                            required>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" name="mobile" class="form-control" id="phone"
+                            placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="insuranceType" class="form-label">Insurance Type</label>
+                        <select class="form-select" name="type" id="insuranceType" required>
+                            <option value="" disabled selected>Select insurance type</option>
+                            <option value="term">Term Plan = 5,00,000/- </option>
+                            <option value="wholelife">Whole Life Plan = 10,00,000/-</option>
+                            <option value="endowment">Endowment Plan = 15,00,000/-</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="policyNumber" class="form-label">Policy Number (If Renewing)</label>
+                        <input value="{{ no }}" type="number" class="form-control" id="policyNumber" disabled
+                            placeholder="Enter policy number (optional)">
+                        <input value="{{ no }}" type="number" name="policy" class="form-control" id="policyNumberHidden"
+                            hidden placeholder="Enter policy number (optional)">
+                    </div>
+
+                    <div class="mb-3 col-md-3">
+                        <label for="State" class="form-label">State</label>
+                        <input name="state" type="text" class="form-control" id="State" placeholder="Enter your State"
+                            required>
+                    </div>
+
+                    <div class="mb-3 col-md-3">
+                        <label for="City" class="form-label">City</label>
+                        <input name="city" type="text" class="form-control" id="City" placeholder="Enter your City"
+                            required>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="idProof" class="form-label">Upload ID Proof Documents</label>
+                        <input type="file" name="id_proof" class="form-control file-upload" id="idProof" multiple
+                            required>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="income" class="form-label">Upload Income Proof</label>
+                        <input type="file" name="income" class="form-control file-upload" id="income" multiple required>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="photo" class="form-label">Upload Photo</label>
+                        <input type="file" name="photo" class="form-control file-upload" id="photo" multiple required>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="beneficiary" class="form-label">Upload Medical Examination Report</label>
+                        <input type="file" name="beneficiary_details" class="form-control file-upload" id="beneficiary"
+                            multiple required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
